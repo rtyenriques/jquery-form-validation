@@ -71,29 +71,29 @@
 
         <div class="form-element">
 
-            <input type="text" name="email" id="email">
             <label for="email">Email</label>
+            <input type="text" name="email" id="email">
 
         </div>
 
         <div class="form-element">
 
-            <input type="text" name="phone" id="phone">
             <label for="phone">Telephone</label>
+            <input type="text" name="phone" id="phone">
 
         </div>
 
         <div class="form-element">
 
-            <input type="password" name="password" id="password">
             <label for="password">Password</label>
+            <input type="password" name="password" id="password">
 
         </div>
 
         <div class="form-element">
 
-            <input type="password" name="password" id="passwordConfirm">
             <label for="password">Confirm Password</label>
+            <input type="password" name="password" id="passwordConfirm">
 
         </div>
 
@@ -110,30 +110,32 @@
               return regex.test(email);
              }
 
-             var errorMessage = "";
+             
+            $("#submitButton").click(function() {
+
+                var errorMessage = "";
              var fieldsMissing = "";
 
              if ($("#email").val() == "") {
-                fieldsMissing += "<br>Email"
+                fieldsMissing += "<br>Email";
              }
 
              if ($("#phone").val() == "") {
-                fieldsMissing += "<br>Phone"
+                fieldsMissing += "<br>Phone";
              }
 
              if ($("#password").val() == "") {
-                fieldsMissing += "<br>Password"
+                fieldsMissing += "<br>Password";
              }
 
              if ($("#passwordConfirm").val() == "") {
-                fieldsMissing += "<br>PasswordConfirm"
+                fieldsMissing += "<br>PasswordConfirm";
              }
 
              if (fieldsMissing != "") {
-                errorMessage += "<p>the fields are missing" + fieldsMissing;
+                errorMessage += "<p>the fields are missing</p>" + fieldsMissing;
              }
 
-            $("#submitButton").click(function() {
 
                 if (isEmail($("#email").val()) == false) {
 
